@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/corixuwe/11/edit
+-->
+<head>
+<script src="http://code.jquery.com/jquery-git2.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <button id="Charles">Push Me</button>
+<script>
+var width= 1000;
+var height= 1000;
+var numOfsq= 10;
+
+var rr= [];
+
+var karina= Raphael(50,50,width,height);
+
+var imageURL="http://static.gamespot.com/uploads/original/1179/11799911/2444214-sona.jpg";
+
+for (var X=0; X<numOfsq; X++){
+  rr[X]=karina.image(imageURL, 200, 200,100,100);
+}
+
+function jazz () {
+  var h =[];
+  var w =[];
+  for(var anything=0; anything<numOfsq; anything=anything+1){
+    h[anything]= Math.random()*height;
+  }
+  for(var cheese=0; cheese<numOfsq; cheese=cheese+1){
+    w[cheese]= Math.random()*width;
+  }
+  for (var cat=0; cat<numOfsq; cat=cat+1){
+    rr[cat].animate({x:h[cat], y:w[cat]}, 1000);
+  }
+    rr[numOfsq-1].animate({x:h[numOfsq-1], y:w[numOfsq-1]}, 1000,jazz);
+ 
+}
+$("#Charles").click(jazz);
+</script>
+</body>
+</html>
